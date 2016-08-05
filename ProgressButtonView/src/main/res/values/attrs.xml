@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressButtonView">
+        <attr name="backgroundColorResource" format="color" />
+        <attr name="backgroundDrawable" format="reference" />
+        <attr name="textColor" format="color" />
+        <attr name="text" format="string" />
+        <attr name="hideButtonWhileLoading" format="boolean" />
+        <attr name="buttonPaddingRight" format="dimension" />
+        <attr name="buttonPaddingLeft" format="dimension" />
+        <attr name="buttonPaddingTop" format="dimension" />
+        <attr name="buttonPaddingBottom" format="dimension" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+</resources>

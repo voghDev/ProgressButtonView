@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <Button
+        android:id="@+id/progress_button_btn"
+        style="@style/TEAButton"
+        android:text="@string/loading"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_button_progressBar"
+        style="@style/GenericLoadingProgressBar"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>
+
+<!-- <style name="TEAButton" parent="Element">
+        <item name="android:background">@color/gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style> -->
