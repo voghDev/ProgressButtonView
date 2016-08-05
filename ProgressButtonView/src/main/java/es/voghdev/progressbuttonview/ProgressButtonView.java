@@ -28,6 +28,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 public class ProgressButtonView extends RelativeLayout {
+    public static final int NO_DRAWABLE = -1;
+    public static final float DEFAULT_SIZE = 14f;
+
     Button button;
     ProgressBar progressBar;
 
@@ -137,9 +140,10 @@ public class ProgressButtonView extends RelativeLayout {
                     ContextCompat.getColor(getContext(), android.R.color.white));
             int backgroundColor =
                     a.getColor(R.styleable.ProgressButtonView_backgroundColorResource,
-                            ContextCompat.getColor(getContext(), android.R.color.background_dark));
+                            ContextCompat.getColor(getContext(), R.color.progressButtonView_default_color));
             String text = a.getString(R.styleable.ProgressButtonView_text);
-            int drawableResId = a.getResourceId(R.styleable.ProgressButtonView_backgroundDrawable, -1);
+            int drawableResId = a.getResourceId(R.styleable.ProgressButtonView_backgroundDrawable,
+                    R.drawable.progressbuttonview_rounded_corners);
             boolean hideOnClick = a.getBoolean(R.styleable.ProgressButtonView_hideButtonWhileLoading, false);
             float paddingRight = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingRight, 8f);
             float paddingLeft = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingLeft, 8f);
@@ -156,12 +160,12 @@ public class ProgressButtonView extends RelativeLayout {
                 setText(text);
             }
 
-            if (drawableResId != -1) {
+            if (drawableResId != NO_DRAWABLE) {
                 setBackgroundDrawable(ContextCompat.getDrawable(getContext(), drawableResId));
                 button.setPadding((int) paddingLeft, (int) paddingTop, (int) paddingRight, (int) paddingBottom);
             }
 
-            if (textSize != 14f) {
+            if (textSize != DEFAULT_SIZE) {
                 button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
             }
 
