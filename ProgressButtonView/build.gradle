@@ -14,7 +14,7 @@ ext {
     siteUrl = 'https://github.com/voghDev/ProgressButtonView'
     gitUrl = 'https://github.com/voghDev/ProgressButtonView.git'
 
-    libraryVersion = '0.0.1'
+    libraryVersion = '0.7.0'
 
     developerId = 'voghDev'
     developerName = 'Olmo Gallegos'
@@ -32,8 +32,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 7
-        versionName "1.0.0"
+        versionCode 1
+        versionName "0.7.0"
     }
     buildTypes {
         release {
