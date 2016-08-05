@@ -7,8 +7,13 @@
 
     <Button
         android:id="@+id/progress_button_btn"
-        style="@style/TEAButton"
-        android:text="@string/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/progressbuttonview_rounded_corners"
+        android:text="@string/send"
+        android:textColor="@android:color/white"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         />
 
     <ProgressBar
@@ -19,10 +24,3 @@
         />
 
 </RelativeLayout>
-
-<!-- <style name="TEAButton" parent="Element">
-        <item name="android:background">@color/gray</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:paddingRight">8dp</item>
-        <item name="android:paddingLeft">8dp</item>
-    </style> -->

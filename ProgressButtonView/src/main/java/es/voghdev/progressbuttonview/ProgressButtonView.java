@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -51,41 +52,38 @@ public class ProgressButtonView extends RelativeLayout {
         style(button, context, attrs, defStyle);
     }
 
-    private void initViews()
-    {
+    private void initViews() {
         View v = inflate(getContext(), getLayoutId(), this);
 
         button = (Button) v.findViewById(R.id.progress_button_btn);
         progressBar = (ProgressBar) v.findViewById(R.id.progress_button_progressBar);
     }
 
-    public int getLayoutId(){
+    public int getLayoutId() {
         return R.layout.view_progress_button;
     }
 
-    public void setOnClickListener(OnClickListener l)
-    {
+    public void setOnClickListener(OnClickListener l) {
         button.setOnClickListener(l);
     }
 
-    public void setOnLongClickListener(OnLongClickListener l){
+    public void setOnLongClickListener(OnLongClickListener l) {
         button.setOnLongClickListener(l);
     }
 
-    public void setText(String text)
-    {
+    public void setText(String text) {
         button.setText(text);
     }
 
-    public void setText(int resId){
+    public void setText(int resId) {
         setText(getContext().getString(resId));
     }
 
-    public void setTextColor(int color){
+    public void setTextColor(int color) {
         button.setTextColor(color);
     }
 
-    public void setTextSize(float textSize){
+    public void setTextSize(float textSize) {
         button.setTextSize(textSize);
     }
 
@@ -93,33 +91,31 @@ public class ProgressButtonView extends RelativeLayout {
         button.setBackgroundDrawable(background);
     }
 
-    public void setBackgroundResource(int resId){
+    public void setBackgroundResource(int resId) {
         button.setBackgroundResource(resId);
     }
 
-    public void setBackgroundColor(int color){
+    public void setBackgroundColor(int color) {
         button.setBackgroundColor(color);
     }
 
-    public void hideButtonOnClick(boolean hide){
+    public void hideButtonOnClick(boolean hide) {
         this.hideButtonOnClick = hide;
     }
 
-    public void showLoading()
-    {
-        if(button.getBackground() instanceof ColorDrawable){
+    public void showLoading() {
+        if (button.getBackground() instanceof ColorDrawable) {
             ColorDrawable buttonColor = (ColorDrawable) button.getBackground();
-            button.setTextColor( buttonColor.getColor() );
+            button.setTextColor(buttonColor.getColor());
         }
         progressBar.setVisibility(ProgressBar.VISIBLE);
         button.setClickable(false);
-        if(hideButtonOnClick) {
+        if (hideButtonOnClick) {
             button.setVisibility(View.INVISIBLE);
         }
     }
 
-    public void hideLoading()
-    {
+    public void hideLoading() {
         progressBar.setVisibility(ProgressBar.GONE);
         button.setVisibility(View.VISIBLE);
         button.setClickable(true);
@@ -128,15 +124,20 @@ public class ProgressButtonView extends RelativeLayout {
 
     //region Styling methods
     protected void style(Button button, Context context, AttributeSet attrs, int defStyle) {
-        if (attrs != null){
+        if (attrs != null) {
             TypedArray a;
 
-            a = (defStyle >= 0) ?
-                    context.obtainStyledAttributes(attrs, R.styleable.ProgressButtonView, defStyle, 0) :
+            a = (defStyle >= 0)
+                    ?
+                    context.obtainStyledAttributes(attrs, R.styleable.ProgressButtonView, defStyle, 0)
+                    :
                     context.obtainStyledAttributes(attrs, R.styleable.ProgressButtonView);
 
-            int textColor = a.getColor(R.styleable.ProgressButtonView_textColor, android.R.color.white);
-            int backgroundColor = a.getColor(R.styleable.ProgressButtonView_backgroundColorResource, android.R.color.background_dark);
+            int textColor = a.getColor(R.styleable.ProgressButtonView_textColor,
+                    ContextCompat.getColor(getContext(), android.R.color.white));
+            int backgroundColor =
+                    a.getColor(R.styleable.ProgressButtonView_backgroundColorResource,
+                            ContextCompat.getColor(getContext(), android.R.color.background_dark));
             String text = a.getString(R.styleable.ProgressButtonView_text);
             int drawableResId = a.getResourceId(R.styleable.ProgressButtonView_backgroundDrawable, -1);
             boolean hideOnClick = a.getBoolean(R.styleable.ProgressButtonView_hideButtonWhileLoading, false);
@@ -150,13 +151,19 @@ public class ProgressButtonView extends RelativeLayout {
             setTextColor(textColor);
             setBackgroundColor(backgroundColor);
             this.hideButtonOnClick(hideOnClick);
-            if(text != null)
+
+            if (text != null) {
                 setText(text);
-            if(drawableResId != -1)
+            }
+
+            if (drawableResId != -1) {
                 setBackgroundDrawable(getResources().getDrawable(drawableResId));
-            button.setPadding((int)paddingLeft,(int)paddingTop,(int)paddingRight,(int)paddingBottom);
-            if(textSize != 14f)
-                button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize); // text sizes come in scaled pixels "sp", so we use "px"
+                button.setPadding((int) paddingLeft, (int) paddingTop, (int) paddingRight, (int) paddingBottom);
+            }
+
+            if (textSize != 14f) {
+                button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            }
 
             a.recycle();
         }
