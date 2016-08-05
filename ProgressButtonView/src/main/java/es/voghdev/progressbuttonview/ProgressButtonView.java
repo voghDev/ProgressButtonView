@@ -157,7 +157,7 @@ public class ProgressButtonView extends RelativeLayout {
             }
 
             if (drawableResId != -1) {
-                setBackgroundDrawable(getResources().getDrawable(drawableResId));
+                setBackgroundDrawable(ContextCompat.getDrawable(getContext(), drawableResId));
                 button.setPadding((int) paddingLeft, (int) paddingTop, (int) paddingRight, (int) paddingBottom);
             }
 
