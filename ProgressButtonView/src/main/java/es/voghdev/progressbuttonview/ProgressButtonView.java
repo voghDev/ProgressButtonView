@@ -20,7 +20,6 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.os.Environment;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -177,7 +176,7 @@ public class ProgressButtonView extends RelativeLayout {
             }
 
             if (drawableResId != NO_DRAWABLE) {
-                setBackgroundDrawable(ContextCompat.getDrawable(getContext(), drawableResId));
+                setBackground(ContextCompat.getDrawable(getContext(), drawableResId));
                 button.setPadding((int) paddingLeft, (int) paddingTop, (int) paddingRight, (int) paddingBottom);
             }
 
