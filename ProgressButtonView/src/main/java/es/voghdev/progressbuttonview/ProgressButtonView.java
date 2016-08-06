@@ -19,6 +19,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Environment;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -94,8 +96,12 @@ public class ProgressButtonView extends RelativeLayout {
         button.setTextSize(textSize);
     }
 
-    public void setBackgroundDrawable(Drawable background) {
-        button.setBackgroundDrawable(background);
+    public void setBackground(Drawable background) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            button.setBackground(background);
+        } else {
+            button.setBackgroundDrawable(background);
+        }
     }
 
     public void setBackgroundResource(int resId) {
