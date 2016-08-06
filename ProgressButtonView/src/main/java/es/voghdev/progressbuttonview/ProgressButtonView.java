@@ -34,8 +34,9 @@ public class ProgressButtonView extends RelativeLayout {
     Button button;
     ProgressBar progressBar;
 
-    private int mTextColor;
-    private boolean hideButtonOnClick = false;
+    int textColor;
+    boolean hideButtonOnClick = false;
+    boolean loading = false;
 
     public ProgressButtonView(Context context) {
         super(context);
@@ -57,12 +58,15 @@ public class ProgressButtonView extends RelativeLayout {
 
     private void initViews() {
         View v = inflate(getContext(), getLayoutId(), this);
+        bindViewListeners(v);
+    }
 
+    protected void bindViewListeners(View v) {
         button = (Button) v.findViewById(R.id.progress_button_btn);
         progressBar = (ProgressBar) v.findViewById(R.id.progress_button_progressBar);
     }
 
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.view_progress_button;
     }
 
@@ -106,7 +110,7 @@ public class ProgressButtonView extends RelativeLayout {
         this.hideButtonOnClick = hide;
     }
 
-    public void showLoading() {
+    public synchronized void showLoading() {
         if (button.getBackground() instanceof ColorDrawable) {
             ColorDrawable buttonColor = (ColorDrawable) button.getBackground();
             button.setTextColor(buttonColor.getColor());
@@ -116,13 +120,19 @@ public class ProgressButtonView extends RelativeLayout {
         if (hideButtonOnClick) {
             button.setVisibility(View.INVISIBLE);
         }
+        loading = true;
     }
 
-    public void hideLoading() {
+    public synchronized void hideLoading() {
         progressBar.setVisibility(ProgressBar.GONE);
         button.setVisibility(View.VISIBLE);
         button.setClickable(true);
-        setTextColor(mTextColor);
+        setTextColor(textColor);
+        loading = false;
+    }
+
+    public synchronized boolean isLoading() {
+        return loading;
     }
 
     //region Styling methods
@@ -151,7 +161,7 @@ public class ProgressButtonView extends RelativeLayout {
             float paddingBottom = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingBottom, 0f);
             float textSize = a.getDimension(R.styleable.ProgressButtonView_textSize, 14);
 
-            mTextColor = textColor;
+            this.textColor = textColor;
             setTextColor(textColor);
             setBackgroundColor(backgroundColor);
             this.hideButtonOnClick(hideOnClick);
