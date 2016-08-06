@@ -7,14 +7,14 @@ ext {
 
     publishedGroupId = 'es.voghdev.progressbuttonview'
     libraryName = 'ProgressButtonView'
-    artifact = 'library'
+    artifact = 'ProgressButtonView'
 
     libraryDescription = 'Simple CustomView that shows a Button with a ProgressBar, to illustrate how Android CustomViews are developed'
 
     siteUrl = 'https://github.com/voghDev/ProgressButtonView'
     gitUrl = 'https://github.com/voghDev/ProgressButtonView.git'
 
-    libraryVersion = '0.7.0'
+    libraryVersion = '0.7.3'
 
     developerId = 'voghDev'
     developerName = 'Olmo Gallegos'
@@ -32,8 +32,8 @@ android {
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 23
-        versionCode 1
-        versionName "0.7.0"
+        versionCode 3
+        versionName "0.7.3"
     }
     buildTypes {
         release {
