@@ -21,6 +21,7 @@
         style="@style/GenericLoadingProgressBar"
         android:layout_marginTop="2dp"
         android:visibility="invisible"
+        android:translationZ="2dp"
         />
 
 </RelativeLayout>
