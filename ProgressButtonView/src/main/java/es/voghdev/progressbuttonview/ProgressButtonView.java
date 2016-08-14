@@ -136,8 +136,9 @@ public class ProgressButtonView extends RelativeLayout {
         progressBar.setVisibility(ProgressBar.GONE);
         button.setVisibility(View.VISIBLE);
         button.setClickable(true);
-        if (buttonText.length() > 0)
+        if (buttonText.length() > 0) {
             button.setText(buttonText);
+        }
         setTextColor(textColor);
         loading = false;
     }
