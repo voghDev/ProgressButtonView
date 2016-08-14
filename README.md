@@ -23,11 +23,11 @@ You can add **ProgressButtonView** to your XML layouts
             app:text="@string/hello" />
 
 
-or you can create it programatically
+You can also create it programatically
 
     ProgressButtonView progressButtonView = new ProgressButtonView(context);
 
-You can display the loading mode, or switch it back to a normal button using:
+Then turn the widget into loading mode, or switch it back to a normal button with:
 
     progressButtonView.showLoading();
     progressButtonView.hideLoading();
