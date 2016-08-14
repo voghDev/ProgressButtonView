@@ -45,7 +45,7 @@ The full list can be found in the [attrs.xml][1] styleable
 Developed By
 ------------
 
-* Olmo Gallegos Hernández - [@voghDev][9] - [mobiledevstories.com][10]
+* Olmo Gallegos Hernández - [@voghDev][2] - [mobiledevstories.com][3]
 
 <a href="http://twitter.com/voghDev">
   <img alt="Follow me on Twitter" src="https://image.freepik.com/iconos-gratis/twitter-logo_318-40209.jpg" height="60" width="60" />
@@ -80,10 +80,12 @@ Contributing
     implement your changes
     commit your changes, push them
     review your code and send me a pull request if you consider it
-    
+
 **For not-so-noobs**
 
     Please make sure that your changes pass both checkstyle and (soon) UI tests before submitting them
 
- [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
  [progressButtonViewScreenshot]: ./screenshots/sample1.gif
+ [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
+ [2]: http://twitter.com/voghDev
+ [3]: http://www.mobiledevstories.com
