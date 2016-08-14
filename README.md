@@ -73,13 +73,16 @@ Developed By
 Contributing
 ------------
 
-    **For noobs (like me some months ago)**
+**For noobs (like me some months ago)**
+
     fork the project into your GitHub account
     checkout your GitHub repo for the project
     implement your changes
     commit your changes, push them
     review your code and send me a pull request if you consider it
-    **For not-so-noobs**
+    
+**For not-so-noobs**
+
     Please make sure that your changes pass both checkstyle and (soon) UI tests before submitting them
 
  [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
