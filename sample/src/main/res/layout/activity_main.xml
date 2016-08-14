@@ -14,13 +14,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Hello World!"/>
+        android:gravity="center_horizontal"
+        android:text="@string/tap_to_say_hello"/>
 
     <es.voghdev.progressbuttonview.ProgressButtonView
+        android:id="@+id/progressButtonView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
+        app:hideButtonWhileLoading="true"
         app:text="@string/hello"
         />
 </LinearLayout>
