@@ -8,6 +8,8 @@ Add this line in your *app/build.gradle*
 
     - soon available as gradle dependency. You can download the code in the meanwhile
 
+![Screenshot][progressButtonViewScreenshot]
+
 Usage
 -----
 
@@ -34,3 +36,4 @@ There are many attributes that you can set to customize its behaviour
 The full list can be found in the [attrs.xml][1] styleable
 
  [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
+ [progressButtonViewScreenshot]: ./screenshots/sample1.gif
