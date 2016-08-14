@@ -19,11 +19,18 @@ You can add **ProgressButtonView** to your XML layouts
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            app:hideButtonWhileLoading="true"
             app:text="@string/hello" />
+
 
 or you can create it programatically
 
     ProgressButtonView progressButtonView = new ProgressButtonView(context);
+
+You can display the loading mode, or switch it back to a normal button using:
+
+    progressButtonView.showLoading();
+    progressButtonView.hideLoading();
 
 There are many attributes that you can set to customize its behaviour
 

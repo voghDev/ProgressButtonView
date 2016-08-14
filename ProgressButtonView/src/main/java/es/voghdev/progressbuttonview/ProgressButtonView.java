@@ -38,6 +38,7 @@ public class ProgressButtonView extends RelativeLayout {
     int textColor;
     boolean hideButtonOnClick = false;
     boolean loading = false;
+    String buttonText = "";
 
     public ProgressButtonView(Context context) {
         super(context);
@@ -122,8 +123,11 @@ public class ProgressButtonView extends RelativeLayout {
         }
         progressBar.setVisibility(ProgressBar.VISIBLE);
         button.setClickable(false);
+        buttonText = button.getText().toString();
         if (hideButtonOnClick) {
             button.setVisibility(View.INVISIBLE);
+        } else {
+            button.setText("");
         }
         loading = true;
     }
@@ -132,6 +136,8 @@ public class ProgressButtonView extends RelativeLayout {
         progressBar.setVisibility(ProgressBar.GONE);
         button.setVisibility(View.VISIBLE);
         button.setClickable(true);
+        if (buttonText.length() > 0)
+            button.setText(buttonText);
         setTextColor(textColor);
         loading = false;
     }
