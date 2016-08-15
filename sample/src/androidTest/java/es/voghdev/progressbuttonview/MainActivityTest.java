@@ -59,6 +59,7 @@ public class MainActivityTest {
         onView(withId(R.id.progressButtonView)).perform(click());
         onView(withId(R.id.progress_button_progressBar)).check(matches(isDisplayed()));
 
+
 //        onView(withId(R.id.progressButtonView)).check(matches(isLoading()));
 //        onView(withId(R.id.progressButtonView)).check(matches(new ProgressButtonViewLoadingMatcher()));
     }

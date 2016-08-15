@@ -27,6 +27,6 @@ public class ProgressButtonViewLoadingMatcher extends BaseMatcher<ProgressButton
 
     @Override
     public void describeTo(Description description) {
-        description.appendText("ProgressButtonView is not marked as loading");
+        description.appendText("ProgressButtonView is displaying loading state");
     }
 }
