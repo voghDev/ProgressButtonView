@@ -53,11 +53,11 @@ public class MainActivityTest {
     }
 
     @Test
-    public void shouldBeLoadingAfterProgressButtonViewIsClicked() throws Exception {
+    public void shouldShowButtonAgainAferLoadWhenProgressButtonViewIsClicked() throws Exception {
         startActivity();
 
         onView(withId(R.id.progressButtonView)).perform(click());
-        onView(withId(R.id.progress_button_progressBar)).check(matches(isDisplayed()));
+        onView(withId(R.id.progress_button_btn)).check(matches(isDisplayed()));
     }
 
     private MainActivity startActivity() {
