@@ -3,4 +3,5 @@
     <string name="hello">Hello!</string>
     <string name="hello_response">Hey! Hello!!</string>
     <string name="tap_to_say_hello">This is a ProgressButtonView\n\nTap to say hello</string>
+    <string name="no_crash_promise">I won\'t cause a crash. I promise</string>
 </resources>
