@@ -177,8 +177,9 @@ public class ProgressButtonView extends RelativeLayout {
 
             this.textColor = textColor;
             setTextColor(textColor);
-            if (backgroundColor != NO_COLOR)
+            if (backgroundColor != NO_COLOR) {
                 setBackgroundColor(backgroundColor);
+            }
             this.hideButtonOnClick(hideOnClick);
 
             if (text != null) {
