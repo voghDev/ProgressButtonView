@@ -83,7 +83,15 @@ Contributing
 
 **For not-so-noobs**
 
-    Please make sure that your changes pass both checkstyle and (soon) UI tests before submitting them
+    Please make sure that your changes pass both checkstyle and UI tests before submitting them
+
+    ./gradlew checkstyle
+
+    ./gradlew test
+
+And with your Android device connected
+
+    ./gradlew connectedCheck
 
  [progressButtonViewScreenshot]: ./screenshots/sample1.gif
  [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
