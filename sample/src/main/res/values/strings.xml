@@ -4,4 +4,9 @@
     <string name="hello_response">Hey! Hello!!</string>
     <string name="tap_to_say_hello">This is a ProgressButtonView\n\nTap to say hello</string>
     <string name="no_crash_promise">I won\'t cause a crash. I promise</string>
+    <string name="no_crash_response">Nobody causes a crash here! Hooray!</string>
+    <string name="visibility_response">I am visible, and have a text. Hooray!</string>
+    <string name="visible_promise">I will have a background color. I promise</string>
+    <string name="menu_sample2_txt">Sample with wrong attrs</string>
+    <string name="menu_sample3_txt">Sample with two background attrs</string>
 </resources>

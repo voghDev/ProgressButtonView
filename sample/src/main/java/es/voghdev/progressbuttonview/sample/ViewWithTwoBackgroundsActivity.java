@@ -15,24 +15,21 @@
  */
 package es.voghdev.progressbuttonview.sample;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import es.voghdev.progressbuttonview.ProgressButtonView;
 
-public class MainActivity extends AppCompatActivity {
+public class ViewWithTwoBackgroundsActivity extends AppCompatActivity {
     ProgressButtonView progressButtonView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_view_with_two_backgrounds);
 
         progressButtonView = (ProgressButtonView) findViewById(R.id.progressButtonView);
 
@@ -41,43 +38,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 progressButtonView.showLoading();
 
-                sayHelloAfterAFewMillisecs();
+                celebrateVisibilityAfterAFewMillisecs();
             }
         });
     }
 
-    private void sayHelloAfterAFewMillisecs() {
+    private void celebrateVisibilityAfterAFewMillisecs() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 progressButtonView.hideLoading();
 
-                Toast.makeText(MainActivity.this, R.string.hello_response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewWithTwoBackgroundsActivity.this,
+                        R.string.visibility_response, Toast.LENGTH_SHORT).show();
             }
         }, 1500);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_sample2) {
-            Intent intent = new Intent(this, ViewWithWrongAttributesActivity.class);
-            startActivity(intent);
-            return false;
-        } else if (id == R.id.action_sample3) {
-            Intent intent = new Intent(this, ViewWithTwoBackgroundsActivity.class);
-            startActivity(intent);
-            return false;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 }

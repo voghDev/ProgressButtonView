@@ -30,6 +30,7 @@ import android.widget.RelativeLayout;
 
 public class ProgressButtonView extends RelativeLayout {
     public static final int NO_DRAWABLE = -1;
+    public static final int NO_COLOR = -1;
     public static final float DEFAULT_SIZE = 14f;
 
     Button button;
@@ -97,9 +98,9 @@ public class ProgressButtonView extends RelativeLayout {
     }
 
     public void setBackground(Drawable background) {
-        if (Build.VERSION.SDK_INT >= 16) {
+        if (Build.VERSION.SDK_INT >= 16 && button != null) {
             button.setBackground(background);
-        } else {
+        } else if (Build.VERSION.SDK_INT < 16 && button != null) {
             button.setBackgroundDrawable(background);
         }
     }
@@ -158,14 +159,15 @@ public class ProgressButtonView extends RelativeLayout {
                     :
                     context.obtainStyledAttributes(attrs, R.styleable.ProgressButtonView);
 
+
             int textColor = a.getColor(R.styleable.ProgressButtonView_textColor,
                     ContextCompat.getColor(getContext(), android.R.color.white));
             int backgroundColor =
                     a.getColor(R.styleable.ProgressButtonView_backgroundColorResource,
-                            ContextCompat.getColor(getContext(), R.color.progressButtonView_default_color));
+                            NO_COLOR);
             String text = a.getString(R.styleable.ProgressButtonView_text);
             int drawableResId = a.getResourceId(R.styleable.ProgressButtonView_backgroundDrawable,
-                    R.drawable.progressbuttonview_rounded_corners);
+                    NO_DRAWABLE);
             boolean hideOnClick = a.getBoolean(R.styleable.ProgressButtonView_hideButtonWhileLoading, false);
             float paddingRight = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingRight, 8f);
             float paddingLeft = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingLeft, 8f);
@@ -175,7 +177,8 @@ public class ProgressButtonView extends RelativeLayout {
 
             this.textColor = textColor;
             setTextColor(textColor);
-            setBackgroundColor(backgroundColor);
+            if (backgroundColor != NO_COLOR)
+                setBackgroundColor(backgroundColor);
             this.hideButtonOnClick(hideOnClick);
 
             if (text != null) {

@@ -24,7 +24,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import es.voghdev.progressbuttonview.sample.R;
-import es.voghdev.progressbuttonview.sample.ViewWithWrongAttributesActivity;
+import es.voghdev.progressbuttonview.sample.ViewWithTwoBackgroundsActivity;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -34,20 +34,20 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ViewWithWrongAttributesTest {
+public class ViewWithTwoBackgroundsTest {
     @Rule
-    public ActivityTestRule<ViewWithWrongAttributesActivity> activityRule =
-            new ActivityTestRule<>(ViewWithWrongAttributesActivity.class, true, false);
+    public ActivityTestRule<ViewWithTwoBackgroundsActivity> activityRule =
+            new ActivityTestRule<>(ViewWithTwoBackgroundsActivity.class, true, false);
 
     @Test
-    public void shouldNotCrashWhenViewWithWrongAttributesIsDisplayed() {
+    public void shouldNotCrashWhenViewWithTwoBackgroundsIsDisplayed() {
         startActivity();
 
-        onView(withText(R.string.no_crash_promise)).check(matches(isDisplayed()));
+        onView(withText(R.string.visible_promise)).check(matches(isDisplayed()));
     }
 
 
-    private ViewWithWrongAttributesActivity startActivity() {
+    private ViewWithTwoBackgroundsActivity startActivity() {
         return activityRule.launchActivity(null);
     }
 }

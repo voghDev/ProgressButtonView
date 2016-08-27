@@ -38,18 +38,19 @@ public class ViewWithWrongAttributesActivity extends AppCompatActivity {
             public void onClick(View view) {
                 progressButtonView.showLoading();
 
-                sayHelloAfterAFewMillisecs();
+                celebrateNoCrashesAfterAFewMillisecs();
             }
         });
     }
 
-    private void sayHelloAfterAFewMillisecs() {
+    private void celebrateNoCrashesAfterAFewMillisecs() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 progressButtonView.hideLoading();
 
-                Toast.makeText(ViewWithWrongAttributesActivity.this, R.string.hello_response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewWithWrongAttributesActivity.this,
+                        R.string.no_crash_response, Toast.LENGTH_SHORT).show();
             }
         }, 1500);
     }
