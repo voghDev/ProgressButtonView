@@ -6,7 +6,7 @@ Installation
 
 Add this line in your *app/build.gradle*
 
-    - soon available as gradle dependency. You can download the code in the meanwhile
+    compile 'es.voghdev.progressbuttonview:ProgressButtonView:0.7.5'
 
 ![Screenshot][progressButtonViewScreenshot]
 
