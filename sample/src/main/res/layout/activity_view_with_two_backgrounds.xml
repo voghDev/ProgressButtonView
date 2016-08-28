@@ -18,7 +18,7 @@
         android:layout_marginTop="16dp"
         app:hideButtonWhileLoading="false"
         app:text="@string/visible_promise"
-        app:backgroundColorResource="@color/colorPrimary"
+        app:backgroundColorResource="@color/orange"
         />
     <!-- The android:background property is a wrong attribute.
     We are testing that ProgressButtonView does not crash when this attribute is set.

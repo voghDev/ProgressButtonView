@@ -18,7 +18,8 @@
         android:layout_marginTop="16dp"
         app:hideButtonWhileLoading="false"
         app:text="@string/no_crash_promise"
-        android:background="@drawable/progressbuttonview_rounded_corners"
+        app:backgroundDrawable="@drawable/progressbuttonview_rounded_corners_purple"
+        android:background="@drawable/progressbuttonview_rounded_corners_purple"
         />
     <!-- The android:background property is a wrong attribute.
     We are testing that ProgressButtonView does not crash when this attribute is set.
