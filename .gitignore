@@ -38,6 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+certificates/
+
+# More miscellaneous stuff
 .DS_Store
 Thumbs.db
 TODO.txt
