@@ -8,7 +8,7 @@ Add this line in your *app/build.gradle*
 
     compile 'es.voghdev.progressbuttonview:ProgressButtonView:0.7.5'
 
-![Screenshot][progressButtonViewScreenshot] ![Screenshot][anotherProgressButtonViewScreenshot]
+![Screenshot][progressButtonViewScreenshot]
 
 Usage
 -----
@@ -41,6 +41,8 @@ There are many attributes that you can set to customize its behaviour
     app:backgroundColorResource="@color/my_favorite_background_color"
 
 The full list can be found in the [attrs.xml][1] styleable
+
+![Screenshot][anotherProgressButtonViewScreenshot]
 
 Developed By
 ------------
