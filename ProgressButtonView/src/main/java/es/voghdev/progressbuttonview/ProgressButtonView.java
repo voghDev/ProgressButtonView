@@ -118,7 +118,8 @@ public class ProgressButtonView extends RelativeLayout {
     }
 
     public synchronized void showLoading() {
-        if (button.getBackground() instanceof ColorDrawable) {
+        boolean isColorDrawable = (button.getBackground() instanceof ColorDrawable);
+        if (isColorDrawable) {
             ColorDrawable buttonColor = (ColorDrawable) button.getBackground();
             button.setTextColor(buttonColor.getColor());
         }
@@ -128,7 +129,9 @@ public class ProgressButtonView extends RelativeLayout {
         if (hideButtonOnClick) {
             button.setVisibility(View.INVISIBLE);
         } else {
-            button.setText("");
+            button.setText(isColorDrawable
+                            ? buttonText
+                            : buttonText.replaceAll(".", " "));
         }
         loading = true;
     }

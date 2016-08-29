@@ -27,6 +27,7 @@ import es.voghdev.progressbuttonview.sample.R;
 import es.voghdev.progressbuttonview.sample.ViewWithTwoBackgroundsActivity;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -43,6 +44,14 @@ public class ViewWithTwoBackgroundsTest {
     public void shouldNotCrashWhenViewWithTwoBackgroundsIsDisplayed() {
         startActivity();
 
+        onView(withText(R.string.visible_promise)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void shouldDisplayTextAgainAfterLoadIsCompleted() throws Exception {
+        startActivity();
+
+        onView(withText(R.string.visible_promise)).perform(click());
         onView(withText(R.string.visible_promise)).check(matches(isDisplayed()));
     }
 
