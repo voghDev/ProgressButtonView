@@ -8,7 +8,7 @@ Add this line in your *app/build.gradle*
 
     compile 'es.voghdev.progressbuttonview:ProgressButtonView:0.7.5'
 
-![Screenshot][progressButtonViewScreenshot]
+![Screenshot][progressButtonViewScreenshot] ![Screenshot][anotherProgressButtonViewScreenshot]
 
 Usage
 -----
@@ -94,6 +94,7 @@ And with your Android device connected
     ./gradlew connectedCheck
 
  [progressButtonViewScreenshot]: ./screenshots/sample1.gif
+ [anotherProgressButtonViewScreenshot]: ./screenshots/sample2.gif
  [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
  [2]: http://twitter.com/voghDev
  [3]: http://www.mobiledevstories.com
