@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <ImageButton
+        android:id="@+id/progress_image_button_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_camera"
+        android:background="@drawable/progressbuttonview_rounded_corners"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_image_button_progressBar"
+        style="@style/GenericLoadingProgressBar"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+        android:translationZ="2dp"
+        />
+
+</RelativeLayout>
