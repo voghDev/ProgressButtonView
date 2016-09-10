@@ -19,6 +19,7 @@
 
     <style name="GenericLoadingProgressBar" parent="Element">
         <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:indeterminate">true</item>
     </style>
 
