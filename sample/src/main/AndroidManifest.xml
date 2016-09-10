@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".ViewWithWrongAttributesActivity" />
         <activity android:name=".ViewWithTwoBackgroundsActivity" />
+        <activity android:name=".ImageButtonActivity" />
     </application>
 
 </manifest>

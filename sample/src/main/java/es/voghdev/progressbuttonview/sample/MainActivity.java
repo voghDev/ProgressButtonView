@@ -75,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ViewWithTwoBackgroundsActivity.class);
             startActivity(intent);
             return false;
+        } else if (id == R.id.action_sample4) {
+            Intent intent = new Intent(this, ImageButtonActivity.class);
+            startActivity(intent);
+            return false;
         }
 
         return super.onOptionsItemSelected(item);
