@@ -16,8 +16,11 @@
 package es.voghdev.progressbuttonview;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
+import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +29,7 @@ import android.widget.ProgressBar;
 
 public class ProgressImageButtonView extends ProgressButtonView {
     ImageButton imageButton;
+    int buttonDrawableResId = NO_ID;
 
     public ProgressImageButtonView(Context context) {
         super(context);
@@ -46,7 +50,48 @@ public class ProgressImageButtonView extends ProgressButtonView {
 
     @Override
     protected void style(Button button, Context context, AttributeSet attrs, int defStyle) {
+        if (attrs != null) {
+            TypedArray a;
 
+            a = (defStyle >= 0)
+                    ?
+                    context.obtainStyledAttributes(attrs, R.styleable.ProgressButtonView, defStyle, 0)
+                    :
+                    context.obtainStyledAttributes(attrs, R.styleable.ProgressButtonView);
+
+            int backgroundColor =
+                    a.getColor(R.styleable.ProgressButtonView_backgroundColorResource,
+                            NO_COLOR);
+            int drawableResId = a.getResourceId(R.styleable.ProgressButtonView_backgroundDrawable,
+                    NO_DRAWABLE);
+            int src = a.getResourceId(R.styleable.ProgressButtonView_src,
+                    NO_DRAWABLE);
+            boolean hideOnClick = a.getBoolean(R.styleable.ProgressButtonView_hideButtonWhileLoading, false);
+            float paddingRight = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingRight, 8f);
+            float paddingLeft = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingLeft, 8f);
+            float paddingTop = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingTop, 0f);
+            float paddingBottom = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingBottom, 0f);
+
+            if (backgroundColor != NO_COLOR) {
+                setBackgroundColor(backgroundColor);
+            }
+            this.hideButtonOnClick(hideOnClick);
+
+            if (drawableResId != NO_DRAWABLE) {
+                setBackground(ContextCompat.getDrawable(getContext(), drawableResId));
+                imageButton.setPadding((int) paddingLeft, (int) paddingTop, (int) paddingRight, (int) paddingBottom);
+            }
+
+            if (src != NO_DRAWABLE) {
+                buttonDrawableResId = src;
+                setImageDrawable(ContextCompat.getDrawable(getContext(), src));
+                imageButton.setPadding((int) paddingLeft, (int) paddingTop, (int) paddingRight, (int) paddingBottom);
+            }
+
+            // TODO remove inheritance
+
+            a.recycle();
+        }
     }
 
     public void setOnClickListener(OnClickListener l) {
@@ -74,15 +119,37 @@ public class ProgressImageButtonView extends ProgressButtonView {
     }
 
     public void setBackground(Drawable background) {
-        /* Empty */
+        if (Build.VERSION.SDK_INT >= 16 && button != null) {
+            imageButton.setBackground(background);
+        } else if (Build.VERSION.SDK_INT < 16 && button != null) {
+            imageButton.setBackgroundDrawable(background);
+        }
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        imageButton.setImageDrawable(drawable);
+    }
+
+    public void setImageBitmap(Bitmap bitmap) {
+        imageButton.setImageBitmap(bitmap);
+    }
+
+    public void setImageResource(int resId) {
+        imageButton.setImageResource(resId);
+    }
+
+    public void setImageAlpha(int alpha) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
+            imageButton.setImageAlpha(alpha);
+        }
     }
 
     public void setBackgroundResource(int resId) {
-        button.setBackgroundResource(resId);
+        imageButton.setBackgroundResource(resId);
     }
 
     public void setBackgroundColor(int color) {
-        /* Empty */
+        imageButton.setBackgroundColor(color);
     }
 
     @Override
@@ -91,19 +158,15 @@ public class ProgressImageButtonView extends ProgressButtonView {
     }
 
     public synchronized void showLoading() {
-        boolean isColorDrawable = (imageButton.getBackground() instanceof ColorDrawable);
-        if (isColorDrawable) {
-            ColorDrawable buttonColor = (ColorDrawable) imageButton.getBackground();
-        }
         progressBar.setVisibility(ProgressBar.VISIBLE);
         imageButton.setClickable(false);
-        // Button src
+
         if (hideButtonOnClick) {
             imageButton.setVisibility(View.INVISIBLE);
         } else {
-//            imageButton.setImageDrawable(isColorDrawable
-//                    ? buttonText
-//                    : buttonText.replaceAll(".", " "));
+            int nullDrawable = 0; // TODO find a proper null
+            // TODO investigate about tinting icon like background color
+            setImageResource(nullDrawable);
         }
         loading = true;
     }
@@ -112,8 +175,8 @@ public class ProgressImageButtonView extends ProgressButtonView {
         progressBar.setVisibility(ProgressBar.GONE);
         imageButton.setVisibility(View.VISIBLE);
         imageButton.setClickable(true);
-        if (buttonText.length() > 0) {
-//            imageButton.setSrc(buttonText);
+        if (buttonDrawableResId != NO_ID) {
+            setImageResource(buttonDrawableResId);
         }
         loading = false;
     }

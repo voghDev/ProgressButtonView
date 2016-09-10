@@ -11,5 +11,6 @@
         <attr name="buttonPaddingTop" format="dimension" />
         <attr name="buttonPaddingBottom" format="dimension" />
         <attr name="textSize" format="dimension" />
+        <attr name="src" format="reference" />
     </declare-styleable>
 </resources>
