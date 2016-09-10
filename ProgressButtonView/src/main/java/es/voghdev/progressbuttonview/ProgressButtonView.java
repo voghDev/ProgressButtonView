@@ -25,10 +25,10 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 
-public class ProgressButtonView extends RelativeLayout {
+public class ProgressButtonView extends FrameLayout {
     public static final int NO_DRAWABLE = -1;
     public static final int NO_COLOR = -1;
     public static final float DEFAULT_SIZE = 14f;
@@ -130,8 +130,8 @@ public class ProgressButtonView extends RelativeLayout {
             button.setVisibility(View.INVISIBLE);
         } else {
             button.setText(isColorDrawable
-                            ? buttonText
-                            : buttonText.replaceAll(".", " "));
+                    ? buttonText
+                    : buttonText.replaceAll(".", " "));
         }
         loading = true;
     }
