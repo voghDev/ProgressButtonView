@@ -97,6 +97,10 @@ public class ProgressButtonView extends FrameLayout {
         button.setTextSize(textSize);
     }
 
+    public void setEnabled(boolean enabled) {
+        button.setEnabled(enabled);
+    }
+
     public void setBackground(Drawable background) {
         if (Build.VERSION.SDK_INT >= 16 && button != null) {
             button.setBackground(background);
@@ -117,6 +121,7 @@ public class ProgressButtonView extends FrameLayout {
         this.hideButtonOnClick = hide;
     }
 
+    @SuppressWarnings("NewApi")
     public synchronized void showLoading() {
         boolean isColorDrawable = (button.getBackground() instanceof ColorDrawable);
         if (isColorDrawable) {
