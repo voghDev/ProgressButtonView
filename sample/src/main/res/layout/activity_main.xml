@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:text="@string/tap_to_say_hello"/>
+        android:text="@string/progressButtonView_tap_to_say_hello"/>
 
     <es.voghdev.progressbuttonview.ProgressButtonView
         android:id="@+id/progressButtonView"
@@ -24,6 +24,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         app:hideButtonWhileLoading="true"
-        app:text="@string/hello"
+        app:text="@string/progressButtonView_hello"
         />
 </LinearLayout>

@@ -50,7 +50,7 @@ public class ViewWithTwoBackgroundsActivity extends AppCompatActivity {
                 progressButtonView.hideLoading();
 
                 Toast.makeText(ViewWithTwoBackgroundsActivity.this,
-                        R.string.visibility_response, Toast.LENGTH_SHORT).show();
+                        R.string.progressButtonView_visibility_response, Toast.LENGTH_SHORT).show();
             }
         }, 1500);
     }

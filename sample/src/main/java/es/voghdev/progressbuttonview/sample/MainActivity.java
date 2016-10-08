@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 progressButtonView.hideLoading();
 
-                Toast.makeText(MainActivity.this, R.string.hello_response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.progressButtonView_hello_response, Toast.LENGTH_SHORT).show();
             }
         }, 1500);
     }

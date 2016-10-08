@@ -17,7 +17,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         app:hideButtonWhileLoading="false"
-        app:text="@string/visible_promise"
+        app:text="@string/progressButtonView_visible_promise"
         app:backgroundColorResource="@color/orange"
         />
     <!-- The android:background property is a wrong attribute.

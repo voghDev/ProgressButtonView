@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/action_sample2"
-          android:title="@string/menu_sample2_txt"
+          android:title="@string/progressButtonView_menu_sample2_txt"
           android:icon="@android:drawable/ic_media_play" />
 
     <item android:id="@+id/action_sample3"
-          android:title="@string/menu_sample3_txt"
+          android:title="@string/progressButtonView_menu_sample3_txt"
           android:icon="@android:drawable/ic_media_play" />
 
     <item android:id="@+id/action_sample4"
-        android:title="@string/menu_sample4_txt"
+        android:title="@string/progressButtonView_menu_sample4_txt"
         android:icon="@android:drawable/ic_media_play" />
 </menu>

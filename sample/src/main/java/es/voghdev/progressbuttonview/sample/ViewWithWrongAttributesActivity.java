@@ -50,7 +50,7 @@ public class ViewWithWrongAttributesActivity extends AppCompatActivity {
                 progressButtonView.hideLoading();
 
                 Toast.makeText(ViewWithWrongAttributesActivity.this,
-                        R.string.no_crash_response, Toast.LENGTH_SHORT).show();
+                        R.string.progressButtonView_no_crash_response, Toast.LENGTH_SHORT).show();
             }
         }, 1500);
     }

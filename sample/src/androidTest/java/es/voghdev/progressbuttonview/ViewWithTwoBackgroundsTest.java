@@ -44,15 +44,15 @@ public class ViewWithTwoBackgroundsTest {
     public void shouldNotCrashWhenViewWithTwoBackgroundsIsDisplayed() {
         startActivity();
 
-        onView(withText(R.string.visible_promise)).check(matches(isDisplayed()));
+        onView(withText(R.string.progressButtonView_visible_promise)).check(matches(isDisplayed()));
     }
 
     @Test
     public void shouldDisplayTextAgainAfterLoadIsCompleted() throws Exception {
         startActivity();
 
-        onView(withText(R.string.visible_promise)).perform(click());
-        onView(withText(R.string.visible_promise)).check(matches(isDisplayed()));
+        onView(withText(R.string.progressButtonView_visible_promise)).perform(click());
+        onView(withText(R.string.progressButtonView_visible_promise)).check(matches(isDisplayed()));
     }
 
 

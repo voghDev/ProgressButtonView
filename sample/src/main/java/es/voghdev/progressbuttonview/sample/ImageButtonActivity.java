@@ -49,7 +49,7 @@ public class ImageButtonActivity extends AppCompatActivity {
             public void run() {
                 progressImageButtonView.hideLoading();
 
-                Toast.makeText(ImageButtonActivity.this, R.string.hello_response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ImageButtonActivity.this, R.string.progressButtonView_hello_response, Toast.LENGTH_SHORT).show();
             }
         }, 1500);
     }

@@ -43,7 +43,7 @@ public class ViewWithWrongAttributesTest {
     public void shouldNotCrashWhenViewWithWrongAttributesIsDisplayed() {
         startActivity();
 
-        onView(withText(R.string.no_crash_promise)).check(matches(isDisplayed()));
+        onView(withText(R.string.progressButtonView_no_crash_promise)).check(matches(isDisplayed()));
     }
 
 
