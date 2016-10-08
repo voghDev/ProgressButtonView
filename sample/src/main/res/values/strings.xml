@@ -10,4 +10,5 @@
     <string name="progressButtonView_menu_sample2_txt">Sample with wrong attrs</string>
     <string name="progressButtonView_menu_sample3_txt">Sample with two background attrs</string>
     <string name="progressButtonView_menu_sample4_txt">ProgressImageButtonView sample</string>
+    <string name="progressButtonView_menu_sample5_txt">ProgressBar customizations</string>
 </resources>

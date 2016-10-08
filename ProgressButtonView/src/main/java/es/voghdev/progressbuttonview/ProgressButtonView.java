@@ -197,7 +197,6 @@ public class ProgressButtonView extends FrameLayout {
                     :
                     context.obtainStyledAttributes(attrs, R.styleable.ProgressButtonView);
 
-
             int textColor = a.getColor(R.styleable.ProgressButtonView_textColor,
                     ContextCompat.getColor(getContext(), android.R.color.white));
             int backgroundColor =
@@ -212,6 +211,8 @@ public class ProgressButtonView extends FrameLayout {
             float paddingTop = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingTop, 0f);
             float paddingBottom = a.getDimension(R.styleable.ProgressButtonView_buttonPaddingBottom, 0f);
             float textSize = a.getDimension(R.styleable.ProgressButtonView_textSize, 14);
+            String tintMode = a.getString(R.styleable.ProgressButtonView_progressBarTintMode);
+            int tintColor = a.getColor(R.styleable.ProgressButtonView_progressBarTint, NO_COLOR);
 
             this.textColor = textColor;
             setTextColor(textColor);
@@ -231,6 +232,11 @@ public class ProgressButtonView extends FrameLayout {
 
             if (textSize != DEFAULT_SIZE) {
                 button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            }
+
+            if (tintColor != NO_COLOR && tintMode != null) {
+                PorterDuff.Mode mode = PorterDuff.Mode.valueOf(tintMode.toUpperCase());
+                setIndeterminateDrawableColorFilter(tintColor, mode);
             }
 
             a.recycle();

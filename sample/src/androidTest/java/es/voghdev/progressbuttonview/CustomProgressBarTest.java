@@ -24,6 +24,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import es.voghdev.progressbuttonview.sample.CustomProgressBarActivity;
+import es.voghdev.progressbuttonview.sample.CustomProgressBarXMLActivity;
 import es.voghdev.progressbuttonview.sample.R;
 
 import static android.support.test.espresso.Espresso.onView;
@@ -41,6 +42,10 @@ public class CustomProgressBarTest {
     public ActivityTestRule<CustomProgressBarActivity> activityRule =
             new ActivityTestRule<>(CustomProgressBarActivity.class, true, false);
 
+    @Rule
+    public ActivityTestRule<CustomProgressBarXMLActivity> activityXMLRule =
+            new ActivityTestRule<>(CustomProgressBarXMLActivity.class, true, false);
+
     @Test
     public void shouldDisplayAProgressButtonViewWithCustomProgressBarDrawable() {
         startActivity();
@@ -50,8 +55,20 @@ public class CustomProgressBarTest {
         onView(withText("I have a custom progressBar drawable")).check(matches(isDisplayed()));
     }
 
+    @Test
+    public void shouldDisplayACustomProgressBarTintSetOnXML() throws Exception {
+        startXMLActivity();
+
+        onView(withId(R.id.progressButtonView)).check(matches(isDisplayed()));
+        onView(withId(R.id.progressButtonView)).perform(click());
+        onView(withText("My progressBar drawable is tinted on XML")).check(matches(isDisplayed()));
+    }
 
     private CustomProgressBarActivity startActivity() {
         return activityRule.launchActivity(null);
+    }
+
+    private CustomProgressBarXMLActivity startXMLActivity() {
+        return activityXMLRule.launchActivity(null);
     }
 }

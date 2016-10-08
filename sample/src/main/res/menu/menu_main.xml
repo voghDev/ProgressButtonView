@@ -13,4 +13,8 @@
     <item android:id="@+id/action_sample4"
         android:title="@string/progressButtonView_menu_sample4_txt"
         android:icon="@android:drawable/ic_media_play" />
+
+    <item android:id="@+id/action_sample5"
+        android:title="@string/progressButtonView_menu_sample5_txt"
+        android:icon="@android:drawable/ic_media_play" />
 </menu>

@@ -15,6 +15,6 @@
         <attr name="progressBarDrawable" format="reference" />
         <attr name="progressBarColorFilter" format="reference" />
         <attr name="progressBarTint" format="reference" />
-        <attr name="progressBarTintMode" format="reference" />
+        <attr name="progressBarTintMode" format="string" />
     </declare-styleable>
 </resources>

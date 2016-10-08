@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 progressButtonView.hideLoading();
 
-                Toast.makeText(MainActivity.this, R.string.progressButtonView_hello_response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,
+                        R.string.progressButtonView_hello_response, Toast.LENGTH_SHORT).show();
             }
         }, 1500);
     }
@@ -78,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_sample4) {
             Intent intent = new Intent(this, ImageButtonActivity.class);
             startActivity(intent);
+            return false;
+        } else if (id == R.id.action_sample5) {
+            Intent intent = new Intent(this, CustomProgressBarActivity.class);
+            Intent intent2 = new Intent(this, CustomProgressBarXMLActivity.class);
+            startActivity(intent);
+            startActivity(intent2);
             return false;
         }
 
