@@ -12,5 +12,9 @@
         <attr name="buttonPaddingBottom" format="dimension" />
         <attr name="textSize" format="dimension" />
         <attr name="src" format="reference" />
+        <attr name="progressBarDrawable" format="reference" />
+        <attr name="progressBarColorFilter" format="reference" />
+        <attr name="progressBarTint" format="reference" />
+        <attr name="progressBarTintMode" format="reference" />
     </declare-styleable>
 </resources>
