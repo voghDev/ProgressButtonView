@@ -16,7 +16,9 @@
 package es.voghdev.progressbuttonview;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -99,6 +101,25 @@ public class ProgressButtonView extends FrameLayout {
 
     public void setEnabled(boolean enabled) {
         button.setEnabled(enabled);
+    }
+
+    @SuppressWarnings("NewApi")
+    public void setIndeterminateTintMode(PorterDuff.Mode tintMode) {
+        progressBar.setIndeterminateTintMode(tintMode);
+    }
+
+    @SuppressWarnings("NewApi")
+    public void setIndeterminateDrawableTiled(Drawable d) {
+        progressBar.setIndeterminateDrawableTiled(d);
+    }
+
+    public void setIndeterminateDrawable(Drawable d) {
+        progressBar.setIndeterminateDrawable(d);
+    }
+
+    @SuppressWarnings("NewApi")
+    public void setIndeterminateTintList(ColorStateList tint) {
+        progressBar.setIndeterminateTintList(tint);
     }
 
     public void setBackground(Drawable background) {
