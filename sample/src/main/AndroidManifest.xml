@@ -18,6 +18,7 @@
         <activity android:name=".ViewWithWrongAttributesActivity" />
         <activity android:name=".ViewWithTwoBackgroundsActivity" />
         <activity android:name=".ImageButtonActivity" />
+        <activity android:name=".CustomProgressBarActivity" />
     </application>
 
 </manifest>

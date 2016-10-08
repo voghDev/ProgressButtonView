@@ -18,6 +18,7 @@ package es.voghdev.progressbuttonview;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -115,6 +116,14 @@ public class ProgressButtonView extends FrameLayout {
 
     public void setIndeterminateDrawable(Drawable d) {
         progressBar.setIndeterminateDrawable(d);
+    }
+
+    public void setIndeterminateDrawableColorFilter(int color, PorterDuff.Mode mode) {
+        progressBar.getIndeterminateDrawable().setColorFilter(color, mode);
+    }
+
+    public void setIndeterminateDrawableColorFilter(ColorFilter colorFilter) {
+        progressBar.getIndeterminateDrawable().setColorFilter(colorFilter);
     }
 
     @SuppressWarnings("NewApi")
