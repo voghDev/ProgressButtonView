@@ -14,7 +14,7 @@ ext {
     siteUrl = 'https://github.com/voghDev/ProgressButtonView'
     gitUrl = 'https://github.com/voghDev/ProgressButtonView.git'
 
-    libraryVersion = '0.7.7'
+    libraryVersion = '0.7.8'
 
     developerId = 'voghDev'
     developerName = 'Olmo Gallegos'
