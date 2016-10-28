@@ -92,6 +92,10 @@ public class ProgressButtonView extends FrameLayout {
         setText(getContext().getString(resId));
     }
 
+    public CharSequence getText() {
+        return button.getText();
+    }
+
     public void setTextColor(int color) {
         button.setTextColor(color);
     }
@@ -149,6 +153,12 @@ public class ProgressButtonView extends FrameLayout {
 
     public void hideButtonOnClick(boolean hide) {
         this.hideButtonOnClick = hide;
+    }
+
+    public void setAllCaps(boolean value) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            button.setAllCaps(value);
+        }
     }
 
     @SuppressWarnings("NewApi")
@@ -213,6 +223,7 @@ public class ProgressButtonView extends FrameLayout {
             float textSize = a.getDimension(R.styleable.ProgressButtonView_textSize, 14);
             String tintMode = a.getString(R.styleable.ProgressButtonView_progressBarTintMode);
             int tintColor = a.getColor(R.styleable.ProgressButtonView_progressBarTint, NO_COLOR);
+            boolean textAllCaps = a.getBoolean(R.styleable.ProgressButtonView_allCaps, true);
 
             this.textColor = textColor;
             setTextColor(textColor);
@@ -237,6 +248,10 @@ public class ProgressButtonView extends FrameLayout {
             if (tintColor != NO_COLOR && tintMode != null) {
                 PorterDuff.Mode mode = PorterDuff.Mode.valueOf(tintMode.toUpperCase());
                 setIndeterminateDrawableColorFilter(tintColor, mode);
+            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+                button.setAllCaps(textAllCaps);
             }
 
             a.recycle();

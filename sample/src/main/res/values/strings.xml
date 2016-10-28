@@ -11,4 +11,7 @@
     <string name="progressButtonView_menu_sample3_txt">Sample with two background attrs</string>
     <string name="progressButtonView_menu_sample4_txt">ProgressImageButtonView sample</string>
     <string name="progressButtonView_menu_sample5_txt">ProgressBar customizations</string>
+    <string name="progressButtonView_menu_sample6_txt">Button with lowerCase text</string>
+    <string name="progressButtonView_lowerCase_text">LowerCase Text</string>
+    <string name="progressButtonView_with_lowercase_text">This ProgressButtonView has its \"allCaps\" attribute set to false, so it displays lowerCase text</string>
 </resources>

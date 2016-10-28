@@ -5,6 +5,7 @@
         <attr name="backgroundDrawable" format="reference" />
         <attr name="textColor" format="color" />
         <attr name="text" format="string" />
+        <attr name="allCaps" format="boolean" />
         <attr name="hideButtonWhileLoading" format="boolean" />
         <attr name="buttonPaddingRight" format="dimension" />
         <attr name="buttonPaddingLeft" format="dimension" />

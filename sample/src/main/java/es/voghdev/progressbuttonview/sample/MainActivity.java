@@ -86,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             startActivity(intent2);
             return false;
+        } else if (id == R.id.action_sample6) {
+            Intent intent = new Intent(this, ViewWithLowerCaseActivity.class);
+            startActivity(intent);
+            return false;
         }
 
         return super.onOptionsItemSelected(item);
