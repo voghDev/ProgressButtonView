@@ -68,8 +68,8 @@ public class ProgressButtonView extends FrameLayout {
     }
 
     protected void bindViewListeners(View v) {
-        button = (Button) v.findViewById(R.id.progress_button_btn);
-        progressBar = (ProgressBar) v.findViewById(R.id.progress_button_progressBar);
+        button = (Button) findViewById(R.id.progress_button_btn);
+        progressBar = (ProgressBar) findViewById(R.id.progress_button_progressBar);
     }
 
     protected int getLayoutId() {
