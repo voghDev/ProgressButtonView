@@ -35,6 +35,7 @@ public class ProgressButtonView extends FrameLayout {
     public static final int NO_DRAWABLE = -1;
     public static final int NO_COLOR = -1;
     public static final float DEFAULT_SIZE = 14f;
+    public static final String DEFAULT_TINT_MODE = "src_atop";
 
     Button button;
     ProgressBar progressBar;
@@ -243,6 +244,10 @@ public class ProgressButtonView extends FrameLayout {
 
             if (textSize != DEFAULT_SIZE) {
                 button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            }
+
+            if (tintColor != NO_COLOR && tintMode == null) {
+                tintMode = DEFAULT_TINT_MODE.toUpperCase();
             }
 
             if (tintColor != NO_COLOR && tintMode != null) {
