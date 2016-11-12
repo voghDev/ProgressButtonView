@@ -17,9 +17,9 @@ public class WideProgressButtonViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(es.voghdev.progressbuttonview.R.layout.activity_wide_progress_button);
+        setContentView(R.layout.activity_wide_progress_button);
 
-        progressButtonView = (ProgressButtonView) findViewById(es.voghdev.progressbuttonview.R.id.progressButtonView);
+        progressButtonView = (ProgressButtonView) findViewById(R.id.progressButtonView);
 
         progressButtonView.setOnClickListener(new View.OnClickListener() {
             @Override
