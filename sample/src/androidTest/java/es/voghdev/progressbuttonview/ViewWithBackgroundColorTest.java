@@ -48,7 +48,6 @@ public class ViewWithBackgroundColorTest {
         onView(withText(R.string.progressButtonView_visibility_response)).check(matches(isDisplayed()));
     }
 
-
     private ViewWithTintModeActivity startActivity() {
         return activityRule.launchActivity(null);
     }
