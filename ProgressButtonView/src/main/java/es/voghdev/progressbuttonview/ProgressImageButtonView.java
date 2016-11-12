@@ -44,8 +44,8 @@ public class ProgressImageButtonView extends ProgressButtonView {
     }
 
     protected void bindViewListeners(View v) {
-        imageButton = (ImageButton) v.findViewById(R.id.progress_image_button_btn);
-        progressBar = (ProgressBar) v.findViewById(R.id.progress_image_button_progressBar);
+        imageButton = (ImageButton) findViewById(R.id.progress_image_button_btn);
+        progressBar = (ProgressBar) findViewById(R.id.progress_image_button_progressBar);
     }
 
     @Override

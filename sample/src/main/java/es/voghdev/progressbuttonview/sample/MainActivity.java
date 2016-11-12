@@ -90,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ViewWithLowerCaseActivity.class);
             startActivity(intent);
             return false;
+        } else if (id == R.id.action_sample7) {
+            Intent intent = new Intent(this, WideProgressButtonViewActivity.class);
+            startActivity(intent);
+            return false;
         }
 
         return super.onOptionsItemSelected(item);

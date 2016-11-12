@@ -22,6 +22,7 @@
         <activity android:name=".ImageButtonActivity" />
         <activity android:name=".CustomProgressBarActivity" />
         <activity android:name=".CustomProgressBarXMLActivity" />
+        <activity android:name=".WideProgressButtonViewActivity" />
     </application>
 
 </manifest>

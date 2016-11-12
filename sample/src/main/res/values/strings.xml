@@ -12,7 +12,9 @@
     <string name="progressButtonView_menu_sample4_txt">ProgressImageButtonView sample</string>
     <string name="progressButtonView_menu_sample5_txt">ProgressBar customizations</string>
     <string name="progressButtonView_menu_sample6_txt">Button with lowerCase text</string>
+    <string name="progressButtonView_menu_sample7_txt">Wide ProgressButtonView</string>
     <string name="progressButtonView_lowerCase_text">LowerCase Text</string>
     <string name="progressButtonView_with_lowercase_text">This ProgressButtonView has its \"allCaps\" attribute set to false, so it displays lowerCase text</string>
     <string name="progressButtonView_tint_mode">I use tintMode only to tint myself</string>
+    <string name="progressButtonView_wide">I\'m Wide! so so wide!</string>
 </resources>
