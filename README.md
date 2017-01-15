@@ -1,6 +1,8 @@
 # ProgressButtonView
 [![Build Status](https://travis-ci.org/voghDev/ProgressButtonView.svg?branch=master)](https://travis-ci.org/voghDev/ProgressButtonView)
 [![GitHub license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/voghdev/progressbuttonview/blob/master/LICENSE.txt)
+<a href="http://www.methodscount.com/?lib=es.voghdev.progressbuttonview%3AProgressButtonView%3A0.7.9"><img src="https://img.shields.io/badge/Size-24 KB-e91e63.svg"/></a>
+
 
 Simple CustomView that shows a Button with a ProgressBar
 
