@@ -15,16 +15,21 @@
  */
 package es.voghdev.progressbuttonview.sample;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
 import es.voghdev.progressbuttonview.ProgressButtonView;
+import es.voghdev.progressbuttonview.WideProgressButtonView;
 
 public class WideProgressButtonViewActivity extends AppCompatActivity {
     ProgressButtonView progressButtonView;
+    AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,16 @@ public class WideProgressButtonViewActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(dialog != null) {
+            dialog.cancel();
+            dialog = null;
+        }
+    }
+
     private void celebrateVisibilityAfterAFewMillisecs() {
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -51,8 +66,29 @@ public class WideProgressButtonViewActivity extends AppCompatActivity {
 
                 Toast.makeText(WideProgressButtonViewActivity.this,
                         "Wow. You're so wide. I'm impressed", Toast.LENGTH_SHORT).show();
+
+                progressButtonView.setText("Now my text has changed");
+
+                showChangeTextDialog();
             }
         }, 1500);
+    }
+
+    private void showChangeTextDialog() {
+        dialog = new AlertDialog.Builder(this)
+                .setTitle("Change button text")
+                .setMessage("Do you want to change button text?")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        int color = ContextCompat.getColor(WideProgressButtonViewActivity.this, R.color.orange);
+                        progressButtonView.setBackgroundColor(color);
+                        progressButtonView.setText(R.string.send);
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .create();
+        dialog.show();
     }
 
 }

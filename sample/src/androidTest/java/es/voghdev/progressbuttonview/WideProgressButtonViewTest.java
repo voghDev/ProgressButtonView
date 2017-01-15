@@ -50,6 +50,28 @@ public class WideProgressButtonViewTest {
         onView(withText("I'm Wide! so so wide!")).check(matches(isDisplayed()));
     }
 
+    // Trying to reproduce Issue #10
+    @Test
+    public void shouldChangeButtonTextProgramatically() {
+        startActivity();
+
+        onView(withText("I'm Wide! so so wide!")).check(matches(isDisplayed()));
+        onView(withId(R.id.progressButtonView)).perform(click());
+        onView(withText("Now my text has changed")).check(matches(isDisplayed()));
+    }
+
+    // Trying to reproduce Issue #10 (II)
+    @Test
+    public void shouldChangeButtonTextAfterAcceptingADialogThatChangesBackgroundColor() throws Exception {
+        startActivity();
+
+        onView(withId(R.id.progressButtonView)).perform(click());
+        onView(withText("Do you want to change button text?")).check(matches(isDisplayed()));
+
+        onView(withId(android.R.id.button1)).perform(click());
+        onView(withText("Send")).check(matches(isDisplayed()));
+    }
+
     private WideProgressButtonViewActivity startActivity() {
         return activityRule.launchActivity(null);
     }
