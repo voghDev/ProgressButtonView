@@ -25,7 +25,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import es.voghdev.progressbuttonview.ProgressButtonView;
-import es.voghdev.progressbuttonview.WideProgressButtonView;
 
 public class WideProgressButtonViewActivity extends AppCompatActivity {
     ProgressButtonView progressButtonView;
@@ -52,7 +51,7 @@ public class WideProgressButtonViewActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        if(dialog != null) {
+        if (dialog != null) {
             dialog.cancel();
             dialog = null;
         }
