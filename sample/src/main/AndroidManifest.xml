@@ -23,6 +23,7 @@
         <activity android:name=".CustomProgressBarActivity" />
         <activity android:name=".CustomProgressBarXMLActivity" />
         <activity android:name=".WideProgressButtonViewActivity" />
+        <activity android:name=".SetTextIssueActivity" />
     </application>
 
 </manifest>
