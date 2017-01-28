@@ -86,6 +86,7 @@ public class ProgressButtonView extends FrameLayout {
     }
 
     public void setText(String text) {
+        buttonText = text;
         button.setText(text);
     }
 

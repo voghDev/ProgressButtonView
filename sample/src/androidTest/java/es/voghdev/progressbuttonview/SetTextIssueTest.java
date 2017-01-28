@@ -27,10 +27,10 @@ import es.voghdev.progressbuttonview.sample.SetTextIssueActivity;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.core.IsNot.not;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -45,7 +45,7 @@ public class SetTextIssueTest {
 
         onView(withText("Text Before")).check(matches(isDisplayed()));
         onView(withText("Text Before")).perform(click());
-        onView(withText("Text Before")).check(matches(not(isDisplayed())));
+        onView(withText("Text Before")).check(doesNotExist());
         onView(withText("Text After")).check(matches(isDisplayed()));
     }
 

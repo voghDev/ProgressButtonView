@@ -18,10 +18,6 @@ public class SetTextIssueActivity extends AppCompatActivity {
         progressButtonView = (ProgressButtonView) findViewById(R.id.progressButtonView);
         progressButtonView.setText("Text Before");
 
-        progressButtonView.showLoading();
-        progressButtonView.setText("Text After");
-        progressButtonView.hideLoading();
-
         progressButtonView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
