@@ -47,7 +47,8 @@ public class WideProgressButtonViewTest {
 
         onView(withId(R.id.progressButtonView)).check(matches(isDisplayed()));
         onView(withId(R.id.progressButtonView)).perform(click());
-        onView(withText("I'm Wide! so so wide!")).check(matches(isDisplayed()));
+        onView(withText(android.R.string.cancel)).perform(click());
+        onView(withText("Now my text has changed")).check(matches(isDisplayed()));
     }
 
     // Trying to reproduce Issue #10
@@ -57,7 +58,8 @@ public class WideProgressButtonViewTest {
 
         onView(withText("I'm Wide! so so wide!")).check(matches(isDisplayed()));
         onView(withId(R.id.progressButtonView)).perform(click());
-        onView(withText("Now my text has changed")).check(matches(isDisplayed()));
+        onView(withText(android.R.string.ok)).perform(click());
+        onView(withText("Send")).check(matches(isDisplayed()));
     }
 
     // Trying to reproduce Issue #10 (II)
