@@ -17,4 +17,5 @@
     <string name="progressButtonView_with_lowercase_text">This ProgressButtonView has its \"allCaps\" attribute set to false, so it displays lowerCase text</string>
     <string name="progressButtonView_tint_mode">I use tintMode only to tint myself</string>
     <string name="progressButtonView_wide">I\'m Wide! so so wide!</string>
+    <string name="progressButtonView_efficient">I\'m so Efficient</string>
 </resources>

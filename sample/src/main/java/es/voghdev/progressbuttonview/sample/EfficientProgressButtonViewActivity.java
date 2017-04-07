@@ -1,0 +1,93 @@
+/*
+ * Copyright (C) 2016 Olmo Gallegos Hernández.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package es.voghdev.progressbuttonview.sample;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Toast;
+
+import es.voghdev.progressbuttonview.ProgressButtonView;
+
+public class EfficientProgressButtonViewActivity extends AppCompatActivity {
+    ProgressButtonView progressButtonView;
+    AlertDialog dialog;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_efficient_progress_button);
+
+        progressButtonView = (ProgressButtonView) findViewById(R.id.progressButtonView);
+
+        progressButtonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progressButtonView.showLoading();
+
+                celebrateVisibilityAfterAFewMillisecs();
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (dialog != null) {
+            dialog.cancel();
+            dialog = null;
+        }
+    }
+
+    private void celebrateVisibilityAfterAFewMillisecs() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressButtonView.hideLoading();
+
+                Toast.makeText(EfficientProgressButtonViewActivity.this,
+                        "Wow. You're so efficient!", Toast.LENGTH_SHORT).show();
+
+                progressButtonView.setText("I'm still efficient");
+
+                showChangeTextDialog();
+            }
+        }, 1500);
+    }
+
+    private void showChangeTextDialog() {
+        dialog = new AlertDialog.Builder(this)
+                .setTitle("Change button text")
+                .setMessage("Do you want to change button text?")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        int color = ContextCompat.getColor(EfficientProgressButtonViewActivity.this, R.color.orange);
+                        progressButtonView.setBackgroundColor(color);
+                        progressButtonView.setText(R.string.send);
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .create();
+        dialog.show();
+    }
+
+}
