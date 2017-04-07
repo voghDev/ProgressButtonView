@@ -103,5 +103,5 @@ And with your Android device connected
  [progressButtonViewScreenshot]: ./screenshots/sample1.gif
  [anotherProgressButtonViewScreenshot]: ./screenshots/sample2.gif
  [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
- [2]: http://twitter.com/voghDev
+ [2]: https://github.com/voghDev
  [3]: http://www.mobiledevstories.com
