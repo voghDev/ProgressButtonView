@@ -33,8 +33,8 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 @RunWith(AndroidJUnit4.class)
 public class ProgressButtonViewTest {
@@ -45,7 +45,7 @@ public class ProgressButtonViewTest {
     public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     @Mock
-    public View.OnClickListener mockListener;
+    public ProgressButtonView.Collaborator mockCollaborator;
 
     @Before
     public void setUp() {
@@ -61,9 +61,13 @@ public class ProgressButtonViewTest {
     @Test
     public void shouldDoSomethingOnClick() throws Exception {
         View view = viewTestRule.getView(); // Returns a FrameLayout ?!?
-        view.setOnClickListener(mockListener);
+        if (view instanceof ProgressButtonView) {
+            ((ProgressButtonView) view).setCollaborator(mockCollaborator);
+        }
 
         onView(withId(R.id.progress_button_root))
                 .perform(click());
+
+        verify(mockCollaborator, times(1)).collaborate("Hello");
     }
 }
