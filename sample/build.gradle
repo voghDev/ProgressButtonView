@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "es.voghdev.progressbuttonview.sample"
-        minSdkVersion 8
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -54,6 +54,9 @@ dependencies {
         exclude module: 'support-v4'
     }
     androidTestCompile('com.android.support.test.espresso:espresso-intents:2.2.1')
+
+    debugCompile 'com.novoda:espresso-support-extras:0.0.3'
+    androidTestCompile 'com.novoda:espresso-support:0.0.3'
 }
 
 configurations.all {
