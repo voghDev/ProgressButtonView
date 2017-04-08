@@ -59,7 +59,7 @@ public class ProgressButtonViewTest {
     }
 
     @Test
-    public void shouldDoSomethingOnClick() throws Exception {
+    public void shouldFireAMethodOnTheCollaboratorWhenClicked() throws Exception {
         View view = viewTestRule.getView(); // Returns a FrameLayout ?!?
         if (view instanceof ProgressButtonView) {
             ((ProgressButtonView) view).setCollaborator(mockCollaborator);
