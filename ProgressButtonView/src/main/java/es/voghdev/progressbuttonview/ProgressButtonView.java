@@ -183,6 +183,7 @@ public class ProgressButtonView extends FrameLayout {
                     : buttonText.replaceAll(".", " "));
         }
         loading = true;
+        collaborator.collaborate("I'm loading now");
     }
 
     public synchronized void hideLoading() {
