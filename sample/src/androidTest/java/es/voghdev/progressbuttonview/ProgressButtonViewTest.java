@@ -25,6 +25,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
@@ -33,13 +34,14 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 @RunWith(AndroidJUnit4.class)
 public class ProgressButtonViewTest {
     @Rule
-    public ViewTestRule<ProgressButtonView> viewTestRule = new ViewTestRule<>(R.layout.view_progress_button);
+    public ViewTestRule<ProgressButtonView> viewTestRule = new ViewTestRule<>(R.layout.test_progress_button_view);
 
     @Rule
     public MockitoRule mockitoRule = MockitoJUnit.rule();
@@ -47,9 +49,12 @@ public class ProgressButtonViewTest {
     @Mock
     public ProgressButtonView.Collaborator mockCollaborator;
 
+    @Mock
+    public View.OnClickListener mockClickListener;
+
     @Before
     public void setUp() {
-
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
@@ -60,14 +65,34 @@ public class ProgressButtonViewTest {
 
     @Test
     public void shouldFireAMethodOnTheCollaboratorWhenClicked() throws Exception {
-        View view = viewTestRule.getView(); // Returns a FrameLayout ?!?
-        if (view instanceof ProgressButtonView) {
-            ((ProgressButtonView) view).setCollaborator(mockCollaborator);
-        }
+        ProgressButtonView view = viewTestRule.getView();
+        view.setCollaborator(mockCollaborator);
+        view.setOnClickListener(mockClickListener);
 
         onView(withId(R.id.progress_button_root))
                 .perform(click());
 
         verify(mockCollaborator, times(1)).collaborate("Hello");
+    }
+
+    @Test
+    public void shouldFireACollaboratorMethodWhenShowLoadingIsCalled() throws Exception {
+        final ProgressButtonView view = viewTestRule.getView();
+        view.setCollaborator(mockCollaborator);
+
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                view.showLoading();
+            }
+        });
+
+        waitForAsyncBlocksToFinish();
+
+        verify(mockCollaborator, times(1)).collaborate(any(String.class));
+    }
+
+    private void waitForAsyncBlocksToFinish() throws InterruptedException {
+        Thread.sleep(30);
     }
 }
