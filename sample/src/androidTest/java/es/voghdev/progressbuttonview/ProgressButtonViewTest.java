@@ -75,11 +75,11 @@ public class ProgressButtonViewTest {
     }
 
     @Test
-    public void shouldFireACollaboratorMethodWhenShowLoadingIsCalled() throws Exception {
+    public void shouldFireACollaboratorMethodWhenShowLoadingIsCalled() throws Throwable {
         final ProgressButtonView view = viewTestRule.getView();
         view.setCollaborator(mockCollaborator);
 
-        view.post(new Runnable() {
+        viewTestRule.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 view.showLoading();
