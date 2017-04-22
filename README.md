@@ -49,6 +49,11 @@ The full list can be found in the [attrs.xml][1] styleable
 
 ![Screenshot][anotherProgressButtonViewScreenshot]
 
+Experimental
+------------
+
+You can find isolation UI Tests for ProgressButtonView in [this experimental branch][4]. It uses novoda's espresso-support library. More info can be found in [this blogpost][5]
+
 Developed By
 ------------
 
@@ -105,3 +110,5 @@ And with your Android device connected
  [1]: https://github.com/voghDev/ProgressButtonView/blob/master/ProgressButtonView/src/main/res/values/attrs.xml
  [2]: https://github.com/voghDev
  [3]: http://www.mobiledevstories.com
+ [4]: https://github.com/voghDev/ProgressButtonView/tree/add_novoda_espresso_support
+ [5]: https://www.novoda.com/blog/testing-views-in-isolation-with-espresso/
