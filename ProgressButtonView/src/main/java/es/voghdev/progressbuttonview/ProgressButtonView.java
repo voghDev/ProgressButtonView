@@ -20,6 +20,7 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -151,6 +152,14 @@ public class ProgressButtonView extends FrameLayout {
 
     public void setBackgroundColor(int color) {
         button.setBackgroundColor(color);
+    }
+
+    public void setTypeface(Typeface tf) {
+        button.setTypeface(tf);
+    }
+
+    public void setTypeface(Typeface tf, int style) {
+        button.setTypeface(tf, style);
     }
 
     public void hideButtonOnClick(boolean hide) {
