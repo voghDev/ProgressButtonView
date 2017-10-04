@@ -11,7 +11,7 @@ Installation
 
 Add this line in your *app/build.gradle*
 
-    compile 'es.voghdev.progressbuttonview:ProgressButtonView:0.8.1'
+    compile 'es.voghdev.progressbuttonview:ProgressButtonView:0.8.2'
 
 ![Screenshot][progressButtonViewScreenshot]
 
