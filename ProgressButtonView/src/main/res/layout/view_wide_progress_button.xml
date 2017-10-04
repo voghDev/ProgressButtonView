@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/progressbuttonview_rounded_corners"
-        android:text="@string/send"
+        android:text="Send"
         android:textColor="@android:color/white"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"

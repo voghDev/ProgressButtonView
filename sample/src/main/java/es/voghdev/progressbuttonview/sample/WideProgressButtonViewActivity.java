@@ -82,7 +82,7 @@ public class WideProgressButtonViewActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         int color = ContextCompat.getColor(WideProgressButtonViewActivity.this, R.color.orange);
                         progressButtonView.setBackgroundColor(color);
-                        progressButtonView.setText(R.string.send);
+                        progressButtonView.setText("Send");
                     }
                 })
                 .setNegativeButton(android.R.string.cancel, null)

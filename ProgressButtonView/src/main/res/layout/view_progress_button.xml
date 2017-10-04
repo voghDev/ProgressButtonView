@@ -10,7 +10,7 @@
         android:background="@drawable/progressbuttonview_rounded_corners"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:text="@string/send"
+        android:text="Send"
         android:textColor="@android:color/white" />
 
     <ProgressBar
