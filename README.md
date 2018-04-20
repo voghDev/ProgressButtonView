@@ -54,6 +54,19 @@ Experimental
 
 You can find isolation UI Tests for ProgressButtonView in [this experimental branch][4]. It uses novoda's espresso-support library. More info can be found in [this blogpost][5]
 
+Apps using this lib
+-------------------
+
+Many production apps are actually using this widget. Feel free to add yours by submitting a PR
+
+    - [Pokepromo][6]
+    - [MaristApp][7]
+    - [Weevento][8]
+    - [Custom Cook][9]
+    - [Batband][10]
+    - [PEEP][11]
+    - [flup][12]
+
 Developed By
 ------------
 
@@ -112,3 +125,10 @@ And with your Android device connected
  [3]: http://www.mobiledevstories.com
  [4]: https://github.com/voghDev/ProgressButtonView/tree/add_novoda_espresso_support
  [5]: https://www.novoda.com/blog/testing-views-in-isolation-with-espresso/
+ [6]: https://play.google.com/store/apps/details?id=com.pokepromo.app
+ [7]: https://play.google.com/store/apps/details?id=com.appandweb.maristapp
+ [8]: https://play.google.com/store/apps/details?id=com.appandweb.weevento
+ [9]: https://play.google.com/store/apps/details?id=com.appandweb.customcook
+ [10]: https://play.google.com/store/apps/details?id=com.studiobanana.batband
+ [11]: https://play.google.com/store/apps/details?id=com.appandweb.peep
+ [12]: https://play.google.com/store/apps/details?id=com.appandweb.iml
