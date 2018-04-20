@@ -59,13 +59,13 @@ Apps using this lib
 
 Many production apps are actually using this widget. Feel free to add yours by submitting a PR
 
-    - [Pokepromo][6]
-    - [MaristApp][7]
-    - [Weevento][8]
-    - [Custom Cook][9]
-    - [Batband][10]
-    - [PEEP][11]
-    - [flup][12]
+    * [Pokepromo][6]
+    * [MaristApp][7]
+    * [Weevento][8]
+    * [Custom Cook][9]
+    * [Batband][10]
+    * [PEEP][11]
+    * [flup][12]
 
 Developed By
 ------------
