@@ -45,6 +45,7 @@ public class ProgressButtonView extends FrameLayout {
     boolean hideButtonOnClick = false;
     boolean loading = false;
     String buttonText = "";
+    Collaborator collaborator = new EmptyCollaborator();
 
     public ProgressButtonView(Context context) {
         super(context);
@@ -79,6 +80,7 @@ public class ProgressButtonView extends FrameLayout {
     }
 
     public void setOnClickListener(OnClickListener l) {
+        collaborator.collaborate("Hello");
         button.setOnClickListener(l);
     }
 
@@ -190,6 +192,7 @@ public class ProgressButtonView extends FrameLayout {
                     : buttonText.replaceAll(".", " "));
         }
         loading = true;
+        collaborator.collaborate("I'm loading now");
     }
 
     public synchronized void hideLoading() {
@@ -274,4 +277,20 @@ public class ProgressButtonView extends FrameLayout {
     }
 
     //endregion
+
+
+    public void setCollaborator(Collaborator collaborator) {
+        this.collaborator = collaborator;
+    }
+
+    public interface Collaborator {
+        void collaborate(String someString);
+    }
+
+    private class EmptyCollaborator implements Collaborator {
+        @Override
+        public void collaborate(String someString) {
+            /* Empty */
+        }
+    }
 }
