@@ -15,6 +15,7 @@
  */
 package es.voghdev.progressbuttonview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -146,6 +147,16 @@ public class ProgressButtonView extends FrameLayout {
         } else if (Build.VERSION.SDK_INT < 16 && button != null) {
             button.setBackgroundDrawable(background);
         }
+    }
+
+    @SuppressLint("NewApi")
+    public void setBackgroundTintList(ColorStateList tint) {
+        button.setBackgroundTintList(tint);
+    }
+
+    @SuppressLint("NewApi")
+    public void setBackgroundTintMode(PorterDuff.Mode mode) {
+        button.setBackgroundTintMode(mode);
     }
 
     public void setBackgroundResource(int resId) {
