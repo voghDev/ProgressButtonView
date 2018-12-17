@@ -18,7 +18,7 @@ package es.voghdev.progressbuttonview;
 import android.content.Context;
 import android.util.AttributeSet;
 
-class EfficientProgressButtonView extends ProgressButtonView {
+public class EfficientProgressButtonView extends ProgressButtonView {
     public EfficientProgressButtonView(Context context) {
         super(context);
     }
