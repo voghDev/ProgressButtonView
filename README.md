@@ -11,7 +11,7 @@ Installation
 
 Add this line in your *app/build.gradle*
 
-    compile 'es.voghdev.progressbuttonview:ProgressButtonView:0.8.3'
+    compile 'es.voghdev.progressbuttonview:ProgressButtonView:0.8.5'
 
 ![Screenshot][progressButtonViewScreenshot]
 
@@ -26,7 +26,6 @@ You can add **ProgressButtonView** to your XML layouts
             android:layout_gravity="center_horizontal"
             app:hideButtonWhileLoading="true"
             app:text="@string/hello" />
-
 
 You can also create it programatically
 
