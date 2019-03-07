@@ -61,10 +61,13 @@ Many production apps are actually using this widget. Feel free to add yours by s
  * [Pokepromo][6]
  * [MaristApp][7]
  * [Weevento][8]
- * [Custom Cook][9]
- * [Batband][10]
- * [PEEP][11]
- * [flup][12]
+ * [CFIReinaIsabel][9]
+ * [Custom Cook][10]
+ * [Batband][11]
+ * [PEEP][12]
+ * [flup][13]
+
+If you have used this library in your production App, let me know or feel free to send a PR including a link!
 
 Developed By
 ------------
@@ -127,7 +130,8 @@ And with your Android device connected
  [6]: https://play.google.com/store/apps/details?id=com.pokepromo.app
  [7]: https://play.google.com/store/apps/details?id=com.appandweb.maristapp
  [8]: https://play.google.com/store/apps/details?id=com.appandweb.weevento
- [9]: https://play.google.com/store/apps/details?id=com.appandweb.customcook
- [10]: https://play.google.com/store/apps/details?id=com.studiobanana.batband
- [11]: https://play.google.com/store/apps/details?id=com.appandweb.peep
- [12]: https://play.google.com/store/apps/details?id=com.appandweb.iml
+ [9]: https://play.google.com/store/apps/details?id=com.winecta.cfireinaisabel
+ [10]: https://play.google.com/store/apps/details?id=com.appandweb.customcook
+ [11]: https://play.google.com/store/apps/details?id=com.studiobanana.batband
+ [12]: https://play.google.com/store/apps/details?id=com.appandweb.peep
+ [13]: https://play.google.com/store/apps/details?id=com.appandweb.iml
