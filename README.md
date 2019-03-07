@@ -67,7 +67,7 @@ Many production apps are actually using this widget. Feel free to add yours by s
  * [PEEP][12]
  * [flup][13]
 
-If you have used this library in your production App, let me know or feel free to send a PR including a link!
+If you have used this library in your production App, text me and let me know
 
 Developed By
 ------------
