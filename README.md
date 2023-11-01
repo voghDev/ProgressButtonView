@@ -6,6 +6,11 @@
 
 Simple CustomView that shows a Button with a ProgressBar
 
+Deprecation alert
+-----------------
+
+This repository contains an old Java library that is no longer maintained. Feel free to create your own fork if you want to continue with its development
+
 Installation
 ------------
 
